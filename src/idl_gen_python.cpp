@@ -54,6 +54,8 @@ static void BeginClass(const StructDef &struct_def, std::string *code_ptr) {
   std::string &code = *code_ptr;
   code += "class " + struct_def.name + "(object):\n";
   code += Indent + "__slots__ = ['_tab']";
+  code += "\n";
+  code += Indent + "size = " + NumToString(struct_def.bytesize);
   code += "\n\n";
 }
 
